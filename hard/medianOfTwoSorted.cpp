@@ -5,8 +5,7 @@ public:
         vector<int> merge;
         int i = 0;
         int j = 0;
-        while(i < nums1.size() || j < nums2.size()) {
-            if( i + j == t ) break;
+        while(i + j < t + 1) {
             if (i < nums1.size() && j < nums2.size()) {
                 if(nums1[i] < nums2[j]){
                     merge.push_back(nums1[i]);
@@ -24,7 +23,7 @@ public:
             }
         }
         
-        if (merge.size() % 2 == 0) return static_cast<float>((merge[t - 1] + merge[t])) / 2;
+        if ((nums1.size() + nums2.size()) % 2 == 0) return static_cast<float>((merge[t - 1] + merge[t])) / 2;
         return merge[t];
     } 
 };
