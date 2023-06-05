@@ -9,7 +9,6 @@ class Solution:
             ans += 1
             
             visited[start] = True
-            
             stack = [start]
             
             while stack:
